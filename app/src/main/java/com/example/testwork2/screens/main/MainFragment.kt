@@ -23,9 +23,9 @@ class MainFragment : Fragment() {
     ): View? {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
         viewModel.getCompany()
-        viewModel.companyList.observe(viewLifecycleOwner, {
+        viewModel.companyList.observe(viewLifecycleOwner) {
             initialCompany(it)
-        })
+        }
         return binding.root
     }
 

@@ -4,8 +4,8 @@ data class DetailsItem(
     val description: String,
     val id: Int,
     val img: String,
-    val lat: Int,
-    val lon: Int,
+    val lat: Double,
+    val lon: Double,
     val name: String,
     val phone: String,
     val www: String
