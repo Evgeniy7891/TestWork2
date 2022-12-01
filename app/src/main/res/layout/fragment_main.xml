@@ -19,4 +19,5 @@
     tools:listitem="@layout/card_company_item"
     />
 
+
 </FrameLayout>

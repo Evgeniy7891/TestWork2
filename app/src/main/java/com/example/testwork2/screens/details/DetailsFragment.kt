@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.testwork2.R
 import com.example.testwork2.databinding.FragmentDetailsBinding
@@ -48,6 +49,10 @@ class DetailsFragment : Fragment() {
                     .into(ivDetailsCompany)
             }
         }
+        binding.fabBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
         return binding.root
     }
 
