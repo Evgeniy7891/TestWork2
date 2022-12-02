@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.testwork2.R
@@ -29,15 +30,24 @@ class MainFragment : Fragment() {
             initialCompany(it)
             binding.recyclerviewCompany.scrollToPosition(scroll)
         }
-
-
         return binding.root
     }
 
     private fun initialCompany(item: List<CompanyItem>) {
-        binding.recyclerviewCompany.layoutManager = GridLayoutManager(context, 2)
+       binding.recyclerviewCompany.layoutManager = GridLayoutManager(context, 2)
         val adapter = MainAdapter(item)
         binding.recyclerviewCompany.adapter = adapter
+
+    }
+
+    override fun onStop() {
+        super.onStop()
+        scroll = (binding.recyclerviewCompany.layoutManager as GridLayoutManager).findFirstCompletelyVisibleItemPosition()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        scroll = (binding.recyclerviewCompany.layoutManager as GridLayoutManager).findFirstCompletelyVisibleItemPosition()
     }
 
     override fun onDestroy() {
