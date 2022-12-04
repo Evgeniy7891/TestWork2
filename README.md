@@ -10,4 +10,4 @@
 + управление потоками через (Coroutines)
 + навигация между фрагментами (Navigation controller) 
 + обработка изображений (glide)
-+ так же (Material Design, LiveData, Exceptions)
++ так же (RecyclerView, Material Design, LiveData, Exceptions)
